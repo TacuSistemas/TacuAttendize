@@ -28,6 +28,7 @@ services:
   db:
     image: mysql:5.7.23
     restart: always
+    command: --max-allowed-packet=67108864 --skip_ssl --group-concat-max-len=10000000
     env_file:
       - ./.env
     environment:
